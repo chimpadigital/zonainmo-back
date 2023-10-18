@@ -20,6 +20,7 @@ export default function ScrollToTop() {
     });
   }, []);
 
+  
   useEffect(() => {
     
     const toggleVisibility = () => {
