@@ -12,13 +12,7 @@ export default function ScrollToTop() {
       behavior: "smooth",
     });
   };
-
-  useEffect(() => {
-    Aos.init({
-      duration: 1200,
-      once: true,
-    });
-  }, []);
+ 
 
   
   useEffect(() => {

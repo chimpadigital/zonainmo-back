@@ -74,7 +74,7 @@ const Header = () => {
                     role="button"
                   >
                     <i className="far fa-user-circle fz16 me-2" />{" "}
-                    <span className="d-none d-xl-block">Login / Register</span>
+                    <span className="d-none d-xl-block">Login / Register 2</span>
 
                     <UserButton afterSignOutUrl="/"/>
                   </a>
