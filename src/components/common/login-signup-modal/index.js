@@ -1,10 +1,10 @@
  
-import SignIn from "./SignIn";
+import SignIn2 from "./SignIn";
 import SignUp from "./SignUp";
 
 const LoginSignupModal = () => {
   return (
-    <div className="modal-content">
+    <div className="modal-content h-full">
       <div className="modal-header">
         <h5 className="modal-title" id="exampleModalToggleLabel">
           Welcome to Realton
@@ -18,7 +18,7 @@ const LoginSignupModal = () => {
       </div>
       {/* End header */}
 
-      <div className="modal-body">
+      <div className="modal-body h-fyul">
         <div className="log-reg-form">
           <div className="navtab-style2">
             <nav>
@@ -58,7 +58,7 @@ const LoginSignupModal = () => {
                 role="tabpanel"
                 aria-labelledby="nav-home-tab"
               >
-                <SignIn />
+                <SignIn2 />
               </div>
               {/* End signin content */}
 
