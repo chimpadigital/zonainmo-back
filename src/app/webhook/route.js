@@ -64,6 +64,12 @@ export async function handler(req){
     });
   }
 
+  if (eventType === "user.deleted") {
+    await prisma.user.delete({
+      where: { externalId : id } 
+    })
+  }
+
   console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
   console.log('Webhook body:', body)
  
@@ -73,3 +79,4 @@ export async function handler(req){
 export const GET = handler;
 export const POST = handler;
 export const PUT = handler;
+export const DELETE = handler;
