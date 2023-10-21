@@ -4,7 +4,14 @@ import Image from "next/image";
 import ContactInfo from "./ContactInfo";
 import Social from "./Social";
 import ProSidebarContent from "./ProSidebarContent";
-
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+  UserProfile
+} from "@clerk/nextjs";
 const MobileMenu = () => {
   return (
     <div className="mobilie_header_nav stylehome1">
@@ -34,9 +41,11 @@ const MobileMenu = () => {
                   alt="logo"
                 />
               </Link>
-              <Link href="/login">
-                <span className="icon fz18 far fa-user-circle" />
-              </Link>
+              <SignedIn/ > 
+                  <SignedOut>
+                    {/* Signed out users get sign in button */}
+                    <SignInButton />
+                  </SignedOut>
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
+import { prisma } from '@/app/libs/prisma'
  
-export async function POST(request) {
+export async function handler(req){
  
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET
@@ -32,6 +33,8 @@ export async function POST(request) {
   const wh = new Webhook(WEBHOOK_SECRET);
 
   // Verify the payload with the headers
+  let evt 
+
   try {
     evt = wh.verify(body, {
       "svix-id": svix_id,
@@ -46,12 +49,27 @@ export async function POST(request) {
   }
  
   // Get the ID and type
-  const { id } = evt.data;
+  const { id, ...attributes } = evt.data;
   const eventType = evt.type;
  
+  if (eventType === "user.created" || eventType === "user.updated") { 
+
+     await prisma.user.upsert({
+      where: { externalId: id },
+      create: {
+        externalId: id,
+        attributes,
+      },
+      update: { attributes },
+    });
+  }
+
   console.log(`Webhook with and ID of ${id} and type of ${eventType}`)
   console.log('Webhook body:', body)
  
   return new Response('', { status: 201 })
 }
- 
+
+export const GET = handler;
+export const POST = handler;
+export const PUT = handler;

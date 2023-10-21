@@ -1,5 +1,11 @@
 module.exports = [
   {
+    label: "Sign In", path: "/sign-in",
+    subMenu: [
+      { path: "/sign-in", label: "Sign In" },
+    ]
+  },
+  {
     label: "Home",
     subMenu: [
       { path: "/home-v1", label: "Home v1" },

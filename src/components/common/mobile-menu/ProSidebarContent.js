@@ -13,7 +13,11 @@ const ProSidebarContent = () => {
 
   return (
     <Sidebar width="100%" backgroundColor="#fff" className="my-custom-class">
+  
       <Menu>
+      <a   href="/sign-in"> 
+            Sign In  
+        </a>
         {mobileMenuItems.map((item, index) => (
           <SubMenu
             key={index}

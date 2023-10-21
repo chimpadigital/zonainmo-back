@@ -44,6 +44,7 @@ const Header = () => {
               <div className="col-auto">
                 <div className="d-flex align-items-center justify-content-between">
                   <div className="logos mr40">
+
                     <Link className="header-logo logo1" href="/">
                       <Image
                         width={138}
@@ -64,14 +65,7 @@ const Header = () => {
                   {/* End Logo */}
 
                   <MainMenu />
-                  {/* End Main Menu */}
-                </div>
-              </div>
-              {/* End .col-auto */}
-
-              <div className="col-auto">
-                <div className="d-flex align-items-center">
-                  <SignedIn>
+                  <SignedIn  >
                     {/* Mount the UserButton component */}
                     <UserButton />
                   </SignedIn>
@@ -79,6 +73,14 @@ const Header = () => {
                     {/* Signed out users get sign in button */}
                     <SignInButton />
                   </SignedOut>
+
+                  {/* End Main Menu */}
+                </div>
+              </div>
+              {/* End .col-auto */}
+
+              <div className="col-auto">
+                <div className="d-flex align-items-center">
                   <Link
                     className="ud-btn add-property menu-btn bdrs60 mx-2 mx-xl-4"
                     href="/dashboard-add-property"
