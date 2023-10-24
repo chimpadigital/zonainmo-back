@@ -3,7 +3,10 @@
 generator client {
   provider = "prisma-client-js"
 }
- 
+
+generator erd {
+  provider = "prisma-erd-generator"
+}
 
 datasource db {
   provider  = "postgresql"
@@ -12,18 +15,17 @@ datasource db {
 }
 
 model User {
-  id         Int        @id  @default(autoincrement())
-  externalId String     @unique
+  id         Int        @default(autoincrement())
+  externalId String     @id  @unique
   attributes Json
   createdAt  DateTime   @default(now())
   updateAt   DateTime   @updatedAt 
 } 
-
 model Property {
   id          Int     @id @default(autoincrement())
   description String?
-  title       String?
-  user_id      String?
+  title       String?  
+  user_id     String
 }
 
 model PropertyAdress {

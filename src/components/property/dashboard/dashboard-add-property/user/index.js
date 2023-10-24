@@ -8,11 +8,11 @@ export default function Home() {
     }
 
     if (isSignedIn) {
-        return <div>   <input
+        return   <input
             name="user_id"
             id="user_id" 
             value={user.id}
-        /></div>;
+        />;
     }
 
     return <div>Not signed in</div>;

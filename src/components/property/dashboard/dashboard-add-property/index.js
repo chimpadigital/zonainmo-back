@@ -17,7 +17,8 @@ export default function AddPropertyTabContent() {
     const formData = new FormData(form)
     const title = formData.get("title");
     const description = formData.get("description");  
-    const user_id = formData.get("user_id") 
+    const user_id = formData.get("user_id")
+    console.log(title, description, user_id)
     const res = await fetch(`/crud_property`, {
       method: 'POST',
       body: JSON.stringify({title, description, user_id}),

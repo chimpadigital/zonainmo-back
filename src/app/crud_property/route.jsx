@@ -3,15 +3,19 @@ import {prisma} from "@/app/libs/prisma"
 
 
 export async function GET(request, {params}) {
-    const task = await prisma.property.findMany() 
+    const task = await prisma.property.findMany() //get where params
     return NextResponse.json(task)
 }
 
-export async function POST(request) {
+export async function POST(request, {params}) {
     try {   
-        const {data} = await request.json()  
+        const {title, description, user_id} = await request.json()  
         const newNote = await prisma.property.create({
-          data:  data
+          data: {
+            title: title,
+            description : description,
+            user_id : user_id 
+          }
         });
         console.log(newNote)
         return NextResponse.json(newNote.id);
