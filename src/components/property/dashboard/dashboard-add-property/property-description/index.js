@@ -39,13 +39,15 @@ const PropertyDescription = () => {
     },
   };
 
-  return (
-    <form className="form-style1">
+  return ( 
       <div className="row">
         <div className="col-sm-12">
           <div className="mb20">
+       
             <label className="heading-color ff-heading fw600 mb10">Title</label>
             <input
+              name="title"
+              id="title"
               type="text"
               className="form-control"
               placeholder="Your Name"
@@ -60,15 +62,16 @@ const PropertyDescription = () => {
               Description
             </label>
             <textarea
+              id="description"
+              name="description"
               cols={30}
               rows={5}
               placeholder="There are many variations of passages."
               defaultValue={""}
             />
           </div>
-        </div>
-        {/* End .col-6 */}
-
+        </div> 
+{/* 
         <div className="col-sm-6 col-xl-4">
           <div className="mb20">
             <label className="heading-color ff-heading fw600 mb10">
@@ -87,8 +90,7 @@ const PropertyDescription = () => {
               />
             </div>
           </div>
-        </div>
-        {/* End .col-6 */}
+        </div> 
 
         <div className="col-sm-6 col-xl-4">
           <div className="mb20">
@@ -108,8 +110,7 @@ const PropertyDescription = () => {
               />
             </div>
           </div>
-        </div>
-        {/* End .col-6 */}
+        </div> 
 
         <div className="col-sm-6 col-xl-4">
           <div className="mb20">
@@ -129,8 +130,7 @@ const PropertyDescription = () => {
               />
             </div>
           </div>
-        </div>
-        {/* End .col-6 */}
+        </div> 
 
         <div className="col-sm-6 col-xl-4">
           <div className="mb30">
@@ -143,8 +143,7 @@ const PropertyDescription = () => {
               placeholder="Your Name"
             />
           </div>
-        </div>
-        {/* End .col-6 */}
+        </div> 
 
         <div className="col-sm-6 col-xl-4">
           <div className="mb30">
@@ -157,8 +156,7 @@ const PropertyDescription = () => {
               placeholder="Your Name"
             />
           </div>
-        </div>
-        {/* End .col-6 */}
+        </div> 
 
         <div className="col-sm-6 col-xl-4">
           <div className="mb30">
@@ -171,10 +169,8 @@ const PropertyDescription = () => {
               placeholder="Your Name"
             />
           </div>
-        </div>
-        {/* End .col-6 */}
-      </div>
-    </form>
+        </div>  */}
+      </div> 
   );
 };
 

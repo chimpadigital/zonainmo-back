@@ -63,8 +63,7 @@ const Header = () => {
                     </Link>
                   </div>
                   {/* End Logo */}
-
-                  <MainMenu />
+ 
                   <SignedIn  >
                     {/* Mount the UserButton component */}
                     <UserButton />
@@ -87,30 +86,7 @@ const Header = () => {
                   >
                     Add Property
                     <i className="fal fa-arrow-right-long" />
-                  </Link>
-                  <a
-                    className="sidemenu-btn filter-btn-right"
-                    href="#"
-                    data-bs-toggle="offcanvas"
-                    data-bs-target="#SidebarPanel"
-                    aria-controls="SidebarPanelLabel"
-                  >
-                    <Image
-                      width={25}
-                      height={9}
-                      className="img-1"
-                      src="/images/icon/nav-icon-white.svg"
-                      alt="humberger menu"
-                    />
-
-                    <Image
-                      width={25}
-                      height={9}
-                      className="img-2"
-                      src="/images/icon/nav-icon-dark.svg"
-                      alt="humberger menu"
-                    />
-                  </a>
+                  </Link> 
                 </div>
               </div>
               {/* End .col-auto */}
@@ -121,8 +97,8 @@ const Header = () => {
       </header>
       {/* End Header */}
 
-      {/* Signup Modal */}
-      <div className="signup-modal">
+     
+  {/*     <div className="signup-modal">
         <div
           className="modal fade"
           id="loginSignupModal"
@@ -134,10 +110,7 @@ const Header = () => {
             <LoginSignupModal />
           </div>
         </div>
-      </div>
-      {/* End Signup Modal */}
-
-      {/* DesktopSidebarMenu */}
+      </div> 
       <div
         className="offcanvas offcanvas-end"
         tabIndex="-1"
@@ -146,7 +119,7 @@ const Header = () => {
       >
         <SidebarPanel />
       </div>
-      {/* Sidebar Panel End */}
+       */}
     </>
   );
 };
