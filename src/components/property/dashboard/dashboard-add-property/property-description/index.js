@@ -70,8 +70,7 @@ const PropertyDescription = () => {
               defaultValue={""}
             />
           </div>
-        </div> 
-{/* 
+        </div>  
         <div className="col-sm-6 col-xl-4">
           <div className="mb20">
             <label className="heading-color ff-heading fw600 mb10">
@@ -79,40 +78,22 @@ const PropertyDescription = () => {
             </label>
             <div className="location-area">
               <Select
+                id="category"
                 defaultValue={[catergoryOptions[1]]}
-                name="colors"
+                name="category"
                 options={catergoryOptions}
                 styles={customStyles}
                 className="select-custom pl-0"
                 classNamePrefix="select"
-                required
-                isMulti
+                required 
               />
             </div>
           </div>
         </div> 
 
-        <div className="col-sm-6 col-xl-4">
-          <div className="mb20">
-            <label className="heading-color ff-heading fw600 mb10">
-              Listed in
-            </label>
-            <div className="location-area">
-              <Select
-                defaultValue={[listedIn[1]]}
-                name="colors"
-                options={listedIn}
-                styles={customStyles}
-                className="select-custom pl-0"
-                classNamePrefix="select"
-                required
-                isMulti
-              />
-            </div>
-          </div>
-        </div> 
+      
 
-        <div className="col-sm-6 col-xl-4">
+       {/*  <div className="col-sm-6 col-xl-4">
           <div className="mb20">
             <label className="heading-color ff-heading fw600 mb10">
               Property Status
@@ -130,7 +111,7 @@ const PropertyDescription = () => {
               />
             </div>
           </div>
-        </div> 
+        </div>  */}
 
         <div className="col-sm-6 col-xl-4">
           <div className="mb30">
@@ -139,37 +120,15 @@ const PropertyDescription = () => {
             </label>
             <input
               type="text"
+              id="price"
+              name="price"
               className="form-control"
               placeholder="Your Name"
             />
           </div>
         </div> 
-
-        <div className="col-sm-6 col-xl-4">
-          <div className="mb30">
-            <label className="heading-color ff-heading fw600 mb10">
-              Yearly Tax Rate
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Your Name"
-            />
-          </div>
-        </div> 
-
-        <div className="col-sm-6 col-xl-4">
-          <div className="mb30">
-            <label className="heading-color ff-heading fw600 mb10">
-              After Price Label
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Your Name"
-            />
-          </div>
-        </div>  */}
+ 
+ 
       </div> 
   );
 };

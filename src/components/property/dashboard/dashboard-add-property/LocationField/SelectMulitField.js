@@ -54,7 +54,7 @@ const customStyles = {
 };
 
 const SelectMultiField = () => {
-  const fieldTitles = ["Country / State", "City", "Country"];
+  const fieldTitles = ["Country", "City", "Department"];
   return (
     <>
       {Object.keys(options).map((key, index) => (
@@ -64,16 +64,18 @@ const SelectMultiField = () => {
               {fieldTitles[index]}
             </label>
             <div className="location-area">
-              <Select
+              <Select  
+               defaultValue={{ label: "Select...", value: "Sin seleccionar" }}
                 styles={customStyles}
+                id= {"multifield"+index}
+                name= {"multifield"+index}  
                 className="select-custom pl-0"
-                classNamePrefix="select"
-                required
-                isMulti
-                options={options[key].map((item) => ({
+                classNamePrefix="select" 
+                options= 
+                {options[key].map((item) => ({ 
                   value: item,
                   label: item,
-                }))}
+                })) }
               />
             </div>
           </div>

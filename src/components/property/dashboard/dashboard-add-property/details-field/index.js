@@ -3,14 +3,16 @@ import MultiSelectField from "./MultiSelectField";
 import StructureType from "./StructureType";
 
 const DetailsFiled = () => {
-  return ( 
-      <><div className="row">
+  return (
+    <><div className="row">
       <div className="col-sm-6 col-xl-4">
         <div className="mb20">
           <label className="heading-color ff-heading fw600 mb10">
             Size in ft (only numbers)
           </label>
           <input
+            id="size"
+            name="size"
             type="text"
             className="form-control"
             placeholder="Your Name" />
@@ -24,6 +26,8 @@ const DetailsFiled = () => {
             Lot size in ft (only numbers)
           </label>
           <input
+          id="lotsize"
+          name="lotsize"
             type="text"
             className="form-control"
             placeholder="Your Name" />
@@ -35,6 +39,8 @@ const DetailsFiled = () => {
         <div className="mb20">
           <label className="heading-color ff-heading fw600 mb10">Rooms</label>
           <input
+          id="rooms"
+          name="rooms"
             type="text"
             className="form-control"
             placeholder="Your Name" />
@@ -48,6 +54,8 @@ const DetailsFiled = () => {
             Bedrooms
           </label>
           <input
+          id="bedrooms"
+          name="bedrooms"
             type="text"
             className="form-control"
             placeholder="Your Name" />
@@ -61,19 +69,8 @@ const DetailsFiled = () => {
             Bathrooms
           </label>
           <input
-            type="text"
-            className="form-control"
-            placeholder="Your Name" />
-        </div>
-      </div>
-      {/* End .col-4 */}
-
-      <div className="col-sm-6 col-xl-4">
-        <div className="mb20">
-          <label className="heading-color ff-heading fw600 mb10">
-            Custom ID (text)
-          </label>
-          <input
+          id="bathrooms"
+          name="bathrooms"
             type="text"
             className="form-control"
             placeholder="Your Name" />
@@ -87,6 +84,8 @@ const DetailsFiled = () => {
             Garages
           </label>
           <input
+          id="garages"
+          name="garages"
             type="text"
             className="form-control"
             placeholder="Your Name" />
@@ -100,6 +99,8 @@ const DetailsFiled = () => {
             Garage size
           </label>
           <input
+          id="garagesize"
+          name="garagesize"
             type="text"
             className="form-control"
             placeholder="Your Name" />
@@ -112,7 +113,10 @@ const DetailsFiled = () => {
           <label className="heading-color ff-heading fw600 mb10">
             Year built (numeric)
           </label>
-          <input type="text" className="form-control" />
+          <input 
+          id="yearbuilt"
+          name="yearbuilt"
+          type="text" className="form-control" />
         </div>
       </div>
       {/* End .col-4 */}
@@ -123,6 +127,8 @@ const DetailsFiled = () => {
             Available from (date)
           </label>
           <input
+             id="availablefrom"
+             name="availablefrom"
             type="text"
             className="form-control"
             placeholder="99.aa.yyyy" />
@@ -130,61 +136,8 @@ const DetailsFiled = () => {
       </div>
       {/* End .col-4 */}
 
-      <div className="col-sm-6 col-xl-4">
-        <div className="mb20">
-          <label className="heading-color ff-heading fw600 mb10">
-            Basement
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Your Name" />
-        </div>
-      </div>
-      {/* End .col-4 */}
 
-      <div className="col-sm-6 col-xl-4">
-        <div className="mb20">
-          <label className="heading-color ff-heading fw600 mb10">
-            Extra details
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Your Name" />
-        </div>
-      </div>
-      {/* End .col-4 */}
-
-      <div className="col-sm-6 col-xl-4">
-        <div className="mb20">
-          <label className="heading-color ff-heading fw600 mb10">
-            Roofing
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Your Name" />
-        </div>
-      </div>
-      {/* End .col-4 */}
-
-      <div className="col-sm-6 col-xl-4">
-        <div className="mb20">
-          <label className="heading-color ff-heading fw600 mb10">
-            Exterior Material
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Your Name" />
-        </div>
-      </div>
-      {/* End .col-4 */}
-
-      <StructureType />
-    </div><div className="row">
-        <MultiSelectField />
+    </div><div className="row"> 
 
         <div className="col-sm-12">
           <div className="mb20">
@@ -192,6 +145,8 @@ const DetailsFiled = () => {
               Owner/ Agent nots (not visible on front end)
             </label>
             <textarea
+            id="comments"
+            name="comments"
               cols={30}
               rows={5}
               placeholder="There are many variations of passages."
@@ -199,7 +154,7 @@ const DetailsFiled = () => {
           </div>
         </div>
         {/* End .col-12 */}
-      </div></> 
+      </div></>
   );
 };
 
