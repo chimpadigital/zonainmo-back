@@ -25,6 +25,9 @@ export default function AddPropertyTabContent() {
     const multifield1= formData.get("multifield1")
     const multifield2= formData.get("multifield2")
     const zip = formData.get("zip")
+    const addressMap = formData.get("addressMap")
+    const lat = formData.get("lat")
+    const lng = formData.get("lng")
     //details
     const size= formData.get("size")
     const lotsize= formData.get("lotsize")
@@ -35,7 +38,7 @@ export default function AddPropertyTabContent() {
     const yearbuilt = formData.get("yearbuilt")
     const availablefrom = formData.get("availablefrom")
     const comments = formData.get("comments")
-    console.log(title, description, user_id, category, price, multifield0, multifield1, multifield2, zip
+    console.log(title, description, user_id, category, price, multifield0, multifield1, multifield2, zip, addressMap, lat, lng
       , size, lotsize, rooms, bedrooms, garages, garagesize, yearbuilt, availablefrom, comments)
     const res = await fetch(`/crud_property`, {
       method: 'POST',
