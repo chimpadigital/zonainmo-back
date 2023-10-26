@@ -9,12 +9,12 @@ export async function GET(request, {params}) {
 
 export async function POST(request, {params}) {
     try {   
-        const {description, propertyId} = await request.json()  
+        const {description, propertyId, userId} = await request.json()  
         const newNote = await prisma.images.create({
           data: {
-            base64: descriptimagesByteion,
-            propertyId : propertyId 
-            
+            base64: description,
+            propertyId : propertyId,
+            user_id : userId
           }
         });
         console.log(newNote)
