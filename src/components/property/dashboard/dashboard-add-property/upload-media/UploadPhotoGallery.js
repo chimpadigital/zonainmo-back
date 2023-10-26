@@ -14,9 +14,11 @@ const UploadPhotoGallery = () => {
       const reader = new FileReader();
       reader.onload = (e) => {
         newImages.push(e.target.result);
-        setUploadedImages(newImages);
+        setUploadedImages(newImages); 
+        //guardar item
+        console.log(newImages)
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(file);  
     }
   };
 

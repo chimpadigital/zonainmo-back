@@ -34,8 +34,9 @@ export default function AddPropertyTabContent() {
     const yearbuilt = formData.get("yearbuilt")
     const availablefrom = formData.get("availablefrom")
     const comments = formData.get("comments")
-    console.log(title, description, user_id, category, price,  addressMap, lat, lng
-      , size, lotsize, rooms, bedrooms, garages, garagesize, yearbuilt, availablefrom, comments)
+    const youtubeVideoId = formData.get("youtubeVideoID")
+    const youtubeVideoUrl = formData.get("youtubeVideoUrl")
+    console.log(title, description, user_id, category, price, addressMap, lat, lng, youtubeVideoUrl, youtubeVideoId)
     const res = await fetch(`/crud_property`, {
       method: 'POST',
       body: JSON.stringify({ title, description, user_id }),
@@ -126,39 +127,54 @@ export default function AddPropertyTabContent() {
               <User />
             </div>
           </div>
-          <div
-            className="tab-pane fade"
-            id="nav-item3"
-            role="tabpanel"
-            aria-labelledby="nav-item3-tab"
-          >
-            <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
-              <h4 className="title fz17 mb30">Listing Location</h4>
-              <LocationField />
-            </div>
-          </div>
 
           <div
             className="tab-pane fade"
-            id="nav-item4"
+            id="nav-item5"
             role="tabpanel"
-            aria-labelledby="nav-item4-tab"
+            aria-labelledby="nav-item5-tab"
           >
             <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
-              <h4 className="title fz17 mb30">Listing Details</h4>
-              <DetailsFiled />
+              <h4 className="title fz17 mb30">Select Amenities</h4>
+              <div className="row">
+                <Amenities />
+              </div>
             </div>
           </div>
-          <div
-            className="tab-pane fade"
-            id="nav-item2"
-            role="tabpanel"
-            aria-labelledby="nav-item2-tab"
-          >
-            <UploadMedia />
-          </div>
 
-          {/*  
+
+            <div
+              className="tab-pane fade"
+              id="nav-item3"
+              role="tabpanel"
+              aria-labelledby="nav-item3-tab"
+            >
+              <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative"> 
+                <LocationField  className="title fz17"/>
+              </div>
+            </div>
+
+            <div
+              className="tab-pane fade"
+              id="nav-item4"
+              role="tabpanel"
+              aria-labelledby="nav-item4-tab"
+            >
+              <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
+                <h4 className="title fz17 mb30">Listing Details</h4>
+                <DetailsFiled />
+              </div>
+            </div>
+            <div
+              className="tab-pane fade"
+              id="nav-item2"
+              role="tabpanel"
+              aria-labelledby="nav-item2-tab"
+            >
+              <UploadMedia />
+            </div>
+
+            {/*  
           <div
             className="tab-pane fade"
             id="nav-item5"
@@ -172,9 +188,9 @@ export default function AddPropertyTabContent() {
               </div>
             </div>
           </div> */}
-          <button type="submit"
-          >Crear</button>
-        </div>
+            <button type="submit"
+            >Crear</button>
+          </div>
 
       </form></>
   );
