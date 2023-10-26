@@ -4,10 +4,10 @@ import Maps from "./Maps";
 
 const LocationField = () => {
   return (
-    <><div className="row">  
-    
-          <Maps /> 
-      </div> 
+    <><div className="row">
+
+      <Maps />
+    </div>
     </>
   );
 };

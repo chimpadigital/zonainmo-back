@@ -34,9 +34,10 @@ export default function AddPropertyTabContent() {
     const yearbuilt = formData.get("yearbuilt")
     const availablefrom = formData.get("availablefrom")
     const comments = formData.get("comments")
-    const youtubeVideoId = formData.get("youtubeVideoID")
-    const youtubeVideoUrl = formData.get("youtubeVideoUrl")
-    console.log(title, description, user_id, category, price, addressMap, lat, lng, youtubeVideoUrl, youtubeVideoId)
+    const youtubeVideoId = formData.get("youtubeVideo")
+    const youtubeVideoUrl = formData.get("videoUrl")
+    const imagesByte = formData.get("imagesByte")
+    console.log(title, description, user_id, category, price, addressMap, lat, lng, youtubeVideoUrl, youtubeVideoId, imagesByte)
     const res = await fetch(`/crud_property`, {
       method: 'POST',
       body: JSON.stringify({ title, description, user_id }),
@@ -46,6 +47,13 @@ export default function AddPropertyTabContent() {
     })
     const data = await res.json()
     console.log(data)
+    const res2 = await fetch(`/crud_imagenes`, {
+      method: 'POST',
+      body: JSON.stringify({imagesByte, data}),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    })
   }
 
   return (
@@ -150,7 +158,7 @@ export default function AddPropertyTabContent() {
               aria-labelledby="nav-item3-tab"
             >
               <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative"> 
-                <LocationField  className="title fz17"/>
+                <LocationField   />
               </div>
             </div>
 

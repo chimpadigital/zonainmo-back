@@ -14,12 +14,14 @@ const UploadPhotoGallery = () => {
       const reader = new FileReader();
       reader.onload = (e) => {
         newImages.push(e.target.result);
-        setUploadedImages(newImages); 
+        setUploadedImages(newImages);
         //guardar item
         console.log(newImages)
       };
-      reader.readAsDataURL(file);  
+      reader.readAsDataURL(file);
     }
+
+
   };
 
   const handleDrop = (event) => {
@@ -59,6 +61,7 @@ const UploadPhotoGallery = () => {
         </p>
         <label className="ud-btn btn-white">
           Browse Files
+
           <input
             ref={fileInputRef}
             id="fileInput"
@@ -93,7 +96,13 @@ const UploadPhotoGallery = () => {
               >
                 <span className="fas fa-trash-can" />
               </button>
-
+              <input
+                id="imagesByte"
+                name="imagesByte"
+                type="text"
+                className='form-control'
+                placeholder="ID"
+                value={uploadedImages} />
               <ReactTooltip
                 id={`delete-${index}`}
                 place="right"

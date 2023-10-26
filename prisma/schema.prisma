@@ -32,10 +32,7 @@ model Property {
   description   String?
   title         String?
   user_id       String
-  multifield0   String?
-  multifield1   String?
-  multifield2   String?
-  zip           String?
+  address       String?  
   size          String?
   lotSize       String?
   rooms         String?
@@ -45,15 +42,12 @@ model Property {
   yearbuilt     String?
   availablefrom String?
   comments      String?
+  youtubeVideoId String?
+  youtubeVideoUrl String?
+  imagesByte        String?
 }
 
-model PropertyDetails {
-  id         Int    @id @default(autoincrement())
-  label      String
-  value      String
-  //Property   Property? @relation(fields: [propertyId], references: [id])
-  propertyId Int?
-}
+ 
 
 model PropertyFeaturesAminites {
   id         Int    @id @default(autoincrement())
