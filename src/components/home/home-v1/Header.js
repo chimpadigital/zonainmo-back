@@ -43,7 +43,7 @@ const Header = () => {
             <div className="row align-items-center justify-content-between">
               <div className="col-auto">
                 <div className="d-flex align-items-center justify-content-between">
-                  <div className="logos mr40">
+                  <div className="logos mr40">s
 
                     <Link className="header-logo logo1" href="/">
                       <Image

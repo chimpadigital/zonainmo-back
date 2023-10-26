@@ -20,25 +20,21 @@ export default function AddPropertyTabContent() {
     const user_id = formData.get("user_id")
     const category = formData.get("category")
     const price = formData.get("price")
-    //location
-    const multifield0= formData.get("multifield0")
-    const multifield1= formData.get("multifield1")
-    const multifield2= formData.get("multifield2")
-    const zip = formData.get("zip")
+    //location 
     const addressMap = formData.get("addressMap")
     const lat = formData.get("lat")
     const lng = formData.get("lng")
     //details
-    const size= formData.get("size")
-    const lotsize= formData.get("lotsize")
-    const rooms= formData.get("rooms")
+    const size = formData.get("size")
+    const lotsize = formData.get("lotsize")
+    const rooms = formData.get("rooms")
     const bedrooms = formData.get("bedrooms")
     const garages = formData.get("garages")
     const garagesize = formData.get("garagesize")
     const yearbuilt = formData.get("yearbuilt")
     const availablefrom = formData.get("availablefrom")
     const comments = formData.get("comments")
-    console.log(title, description, user_id, category, price, multifield0, multifield1, multifield2, zip, addressMap, lat, lng
+    console.log(title, description, user_id, category, price,  addressMap, lat, lng
       , size, lotsize, rooms, bedrooms, garages, garagesize, yearbuilt, availablefrom, comments)
     const res = await fetch(`/crud_property`, {
       method: 'POST',
@@ -130,7 +126,7 @@ export default function AddPropertyTabContent() {
               <User />
             </div>
           </div>
-        <div
+          <div
             className="tab-pane fade"
             id="nav-item3"
             role="tabpanel"
@@ -141,7 +137,7 @@ export default function AddPropertyTabContent() {
               <LocationField />
             </div>
           </div>
-         
+
           <div
             className="tab-pane fade"
             id="nav-item4"
@@ -152,8 +148,17 @@ export default function AddPropertyTabContent() {
               <h4 className="title fz17 mb30">Listing Details</h4>
               <DetailsFiled />
             </div>
-          </div> 
-            {/*  
+          </div>
+          <div
+            className="tab-pane fade"
+            id="nav-item2"
+            role="tabpanel"
+            aria-labelledby="nav-item2-tab"
+          >
+            <UploadMedia />
+          </div>
+
+          {/*  
           <div
             className="tab-pane fade"
             id="nav-item5"
@@ -175,15 +180,7 @@ export default function AddPropertyTabContent() {
   );
 }
 /*
-   <div
-     className="tab-pane fade"
-     id="nav-item2"
-     role="tabpanel"
-     aria-labelledby="nav-item2-tab"
-   >
-     <UploadMedia />
-   </div>
-
+  
    <div
      className="tab-pane fade"
      id="nav-item3"

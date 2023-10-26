@@ -18,8 +18,7 @@ const DashboardHome = () => {
       <DashboardHeader />
       {/* End Main Header Nav */}
 
-      {/* Mobile Nav  */}
-      <MobileMenu />
+      {/* Mobile Nav  */} 
       {/* End Mobile Nav  */}
 
       {/* dashboard_content_wrapper */}

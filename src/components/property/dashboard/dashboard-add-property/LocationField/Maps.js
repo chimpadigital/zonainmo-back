@@ -90,7 +90,7 @@ const PlacesAutocomplete = ({
         clearSuggestions,
     } = usePlacesAutocomplete({
         debounce: 300,
-        cache: 86400,
+        cache: 86400
     });
 
     const renderSuggestions = () => {
@@ -103,6 +103,7 @@ const PlacesAutocomplete = ({
 
             return (
                 <li
+                 
                     key={place_id}
                     onClick={() => {
                         setValue(description, false);
@@ -117,15 +118,15 @@ const PlacesAutocomplete = ({
     };
 
     return (
-        <div className={styles.autocompleteWrapper}>
+        <div  >
             <input
                 id="addressMap"
                 name="addressMap"
                 value={value}
-                className={styles.autocompleteInput}
+                className="form-control"
                 disabled={!ready}
                 onChange={(e) => setValue(e.target.value)}
-                placeholder="123 Stariway To Heaven"
+                placeholder="Insert Address"
             />
 
             {status === 'OK' && (

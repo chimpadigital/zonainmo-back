@@ -4,7 +4,7 @@ import Maps from "./Maps";
 
 const LocationField = () => {
   return (
-    <><div className="row">
+    <><div className="row">{/* 
       <div className="col-sm-12">
         <div className="mb20">
           <label className="heading-color ff-heading fw600 mb10">
@@ -15,21 +15,13 @@ const LocationField = () => {
             className="form-control"
             placeholder="Your Name" />
         </div>
-      </div>
+      </div> */}
       {/* End col-12 */}
 
-      <SelectMulitField />
-
-      <div className="col-sm-6 col-xl-4">
-        <div className="mb20">
-          <label className="heading-color ff-heading fw600 mb10">Zip</label>
-          <input id="zip" name="zip" type="text" className="form-control" />
-        </div>
-      </div>
+      {/* <SelectMulitField /> */} 
       <div className="col-sm-12">
         <div className="mb20 mt30">
-          <label className="heading-color ff-heading fw600 mb30">
-            Place the listing pin on the map
+          <label className="heading-color ff-heading fw600 mb30"> 
           </label>
           <Maps />
         </div>
