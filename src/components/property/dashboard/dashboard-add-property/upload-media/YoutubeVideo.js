@@ -7,11 +7,10 @@ function Youtube() {
     const yv = new YoutubeVideo()
     const opts = yv.render()
     return (
-        <><><div id="divID">
+        <><> 
             <input
                 id="youtubeVideo"
-                name="input"
-                type="text"
+                name="input" 
                 className='form-control'
                 placeholder="Enter new Video Youtube"
                 value={YouTubeGetID(newId)} />
@@ -22,28 +21,14 @@ function Youtube() {
                 className='form-control'
                 placeholder="Enter new Video Youtube"
                 onChange={(e) => setNewId(e.target.value)} />
-
-        </div>
+ 
             <YouTube   videoId={YouTubeGetID(newId)}
-                opts={opts} />
+               />
         </>   </>
     );
 }
 
-
-export class YoutubeVideo extends React.Component {
-    render() {
-        const opts = {
-            height: "790",
-            width: "100",
-            playerVars: {
-                autoplay: 1,
-            },
-        };
-        return opts
-    }
-
-}
+ 
 
 export function YouTubeGetID(url) {
     url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);

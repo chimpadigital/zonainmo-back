@@ -14,12 +14,7 @@ export default function UploadMedia() {
         <div className="row">
           <div className="col-lg-12">
             <UploadPhotoGallery />
-          </div>
-        </div>
-        {/* End col-12 */}
-       
-        <div className="row"> 
-          <input
+            <input
             id="youtubeVideo"
             name="youtubeVideo" 
             className='form-control' 
@@ -29,7 +24,9 @@ export default function UploadMedia() {
             name="videoUrl" 
             className='form-control'  
             onChange={(e) => setNewId(e.target.value)} />
+          </div>
         </div>
+        
         <YouTube videoId={YouTubeGetID(newId)}
           opts={opts} /> 
     </div>

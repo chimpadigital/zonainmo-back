@@ -25,7 +25,8 @@ model User {
  model Images {
   id    Int  @id @default(autoincrement())
   base64 String 
-  propertyId  String
+  user_id  String
+  property_id String
  }
 model Property {
   id            Int     @id @default(autoincrement())
