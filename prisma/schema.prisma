@@ -22,33 +22,34 @@ model User {
   updateAt   DateTime @updatedAt
 }
 
- model Images {
-  id    Int  @id @default(autoincrement())
-  base64 String 
-  user_id  String
+model Images {
+  id          Int    @id @default(autoincrement())
+  base64      String
+  user_id     String
   property_id String
- }
-model Property {
-  id            Int     @id @default(autoincrement())
-  description   String?
-  title         String?
-  user_id       String
-  address       String?  
-  size          String?
-  lotSize       String?
-  rooms         String?
-  bedrooms      String?
-  garages       String?
-  garagesize    String?
-  yearbuilt     String?
-  availablefrom String?
-  comments      String?
-  youtubeVideoId String?
-  youtubeVideoUrl String?
-  imagesByte        String?
 }
 
- 
+model Property {
+  id              Int      @id @default(autoincrement())
+  description     String?
+  title           String?
+  user_id         String
+  addressMap      String?
+  size            String?
+  lotSize         String?
+  rooms           String?
+  bedrooms        String?
+  garages         String?
+  garagesize      String?
+  yearbuilt       String?
+  availablefrom   String?
+  comments        String?
+  youtubeVideoId  String?
+  youtubeVideoUrl String?
+  fileInput       String?
+  createdAt       DateTime @default(now())
+  updateAt        DateTime @updatedAt
+}
 
 model PropertyFeaturesAminites {
   id         Int    @id @default(autoincrement())

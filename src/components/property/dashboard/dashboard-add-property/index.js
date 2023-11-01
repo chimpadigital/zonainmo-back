@@ -36,24 +36,19 @@ export default function AddPropertyTabContent() {
     const comments = formData.get("comments")
     const youtubeVideoId = formData.get("youtubeVideo")
     const youtubeVideoUrl = formData.get("videoUrl")
-    const imagesByte = formData.get("imagesByte")
-    console.log(title, description, user_id, category, price, addressMap, lat, lng, youtubeVideoUrl, youtubeVideoId, imagesByte)
+    const fileInput = formData.get("fileInput")
+    console.log(title, description, user_id, category, price, addressMap, lat, lng, youtubeVideoUrl, youtubeVideoId, fileInput)
     const res = await fetch(`/crud_property`, {
       method: 'POST',
-      body: JSON.stringify({ title, description, user_id }),
+      body: JSON.stringify({
+        title, description, user_id, addressMap, lat, lng, size, lotsize,
+        rooms, bedrooms, garages, garagesize, yearbuilt, availablefrom, comments, youtubeVideoId, youtubeVideoUrl, fileInput
+      }),
       headers: {
         'Content-type': 'application/json'
       }
-    })
-    const data = await res.json()
-    console.log(data)
-    const res2 = await fetch(`/crud_imagenes`, {
-      method: 'POST',
-      body: JSON.stringify({imagesByte, data}),
-      headers: {
-        'Content-type': 'application/json'
-      }
-    })
+    }) 
+
   }
 
   return (
@@ -151,38 +146,38 @@ export default function AddPropertyTabContent() {
           </div>
 
 
-            <div
-              className="tab-pane fade"
-              id="nav-item3"
-              role="tabpanel"
-              aria-labelledby="nav-item3-tab"
-            >
-              <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative"> 
-                <LocationField   />
-              </div>
+          <div
+            className="tab-pane fade"
+            id="nav-item3"
+            role="tabpanel"
+            aria-labelledby="nav-item3-tab"
+          >
+            <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
+              <LocationField />
             </div>
+          </div>
 
-            <div
-              className="tab-pane fade"
-              id="nav-item4"
-              role="tabpanel"
-              aria-labelledby="nav-item4-tab"
-            >
-              <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
-                <h4 className="title fz17 mb30">Listing Details</h4>
-                <DetailsFiled />
-              </div>
+          <div
+            className="tab-pane fade"
+            id="nav-item4"
+            role="tabpanel"
+            aria-labelledby="nav-item4-tab"
+          >
+            <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
+              <h4 className="title fz17 mb30">Listing Details</h4>
+              <DetailsFiled />
             </div>
-            <div
-              className="tab-pane fade"
-              id="nav-item2"
-              role="tabpanel"
-              aria-labelledby="nav-item2-tab"
-            >
-              <UploadMedia />
-            </div>
+          </div>
+          <div
+            className="tab-pane fade"
+            id="nav-item2"
+            role="tabpanel"
+            aria-labelledby="nav-item2-tab"
+          >
+            <UploadMedia />
+          </div>
 
-            {/*  
+          {/*  
           <div
             className="tab-pane fade"
             id="nav-item5"
@@ -196,9 +191,9 @@ export default function AddPropertyTabContent() {
               </div>
             </div>
           </div> */}
-            <button type="submit"
-            >Crear</button>
-          </div>
+          <button type="submit"
+          >Crear</button>
+        </div>
 
       </form></>
   );

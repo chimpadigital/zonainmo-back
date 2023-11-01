@@ -1,7 +1,7 @@
- 
+
 import React from "react";
-import UploadPhotoGallery from "./UploadPhotoGallery"; 
-import { useState } from 'react' 
+import UploadPhotoGallery from "./UploadPhotoGallery";
+import { useState } from 'react'
 import YouTube from "react-youtube";
 
 export default function UploadMedia() {
@@ -10,25 +10,28 @@ export default function UploadMedia() {
   const opts = yv.render()
   return (
     <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
-      <h4 className="title fz17 mb30">Upload photos of your property</h4> 
-        <div className="row">
-          <div className="col-lg-12">
-            <UploadPhotoGallery />
-            <input
-            id="youtubeVideo"
-            name="youtubeVideo" 
-            className='form-control' 
-            value={YouTubeGetID(newId)} />
-          <input
-            id="videoUrl"
-            name="videoUrl" 
-            className='form-control'  
-            onChange={(e) => setNewId(e.target.value)} />
-          </div>
+      <h4 className="title fz17 mb30">Upload photos of your property</h4>
+      <div className="row">
+        <div className="col-lg-12">
+          <UploadPhotoGallery />
         </div>
-        
-        <YouTube videoId={YouTubeGetID(newId)}
-          opts={opts} /> 
+      </div>
+      {/* End col-12 */}
+
+      <div className="row">
+        <input
+          id="youtubeVideo"
+          name="youtubeVideo"
+          className='form-control'
+          value={YouTubeGetID(newId)} />
+        <input
+          id="videoUrl"
+          name="videoUrl"
+          className='form-control'
+          onChange={(e) => setNewId(e.target.value)} />
+      </div>
+      <YouTube videoId={YouTubeGetID(newId)}
+        opts={opts} />
     </div>
   );
 };
@@ -53,4 +56,4 @@ export function YouTubeGetID(url) {
   url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
   return (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
 }
- 
+

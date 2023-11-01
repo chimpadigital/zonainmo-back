@@ -57,11 +57,17 @@ const UploadPhotoGallery = () => {
         <p className="text mb25">
           Photos must be JPEG or PNG format and at least 2048x768
         </p>
+        <input id="imageByte"
+          name="imageByte"
+          value={uploadedImages}
+        ></input>
         <label className="ud-btn btn-white">
           Browse Files
+     
           <input
             ref={fileInputRef}
             id="fileInput"
+            name="fileInput"
             type="file"
             multiple
             className="ud-btn btn-white"

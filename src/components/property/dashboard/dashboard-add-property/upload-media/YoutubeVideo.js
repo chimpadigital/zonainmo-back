@@ -10,7 +10,7 @@ function Youtube() {
         <><> 
             <input
                 id="youtubeVideo"
-                name="input" 
+                name="youtubeVideo" 
                 className='form-control'
                 placeholder="Enter new Video Youtube"
                 value={YouTubeGetID(newId)} />
