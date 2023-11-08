@@ -6,6 +6,6 @@ import { authMiddleware } from "@clerk/nextjs";
 export default authMiddleware({ignoredRoutes: ["/about","/webhook", "/crud_user", "/crud_property"]});
  
 export const config = {
-      matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/(api|trpc)(.*)'],
+      matcher: [ '/(api|trpc)(.*)'],
 };
  

@@ -119,7 +119,6 @@ const PropertyDescription = () => {
               Price in $
             </label>
             <input
-              type="text"
               id="price"
               name="price"
               className="form-control"

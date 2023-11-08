@@ -10,8 +10,8 @@ export async function GET(request, { params }) {
 export async function POST(request, { params }) {
   try {
     const { title, description, user_id, category, price,
-        lat, size, lootsize, rooms, garages, garagesize, yearbuilt, availablefrom,
-      comments, youtubeVideoID, youtubeVideoUrl, fileInput }
+        lat, lng, size, lootsize, rooms, garages, garagesize, yearbuilt, availablefrom,
+      comments, youtubeVideoID, youtubeVideoUrl, fileInput, addressMap,ammenities0, ammenities1,ammenities2,ammenities3,ammenities4,ammenities5 }
       = await request.json() 
     const newNote = await prisma.property.create({
       data: {
@@ -21,6 +21,7 @@ export async function POST(request, { params }) {
         category: category,
         price: price, 
         lat: lat,
+        lng: lng,
         size: size,
         lootsize: lootsize,
         rooms: rooms,
@@ -31,10 +32,17 @@ export async function POST(request, { params }) {
         comments: comments,
         youtubeVideoID: youtubeVideoID,
         youtubeVideoUrl: youtubeVideoUrl,
-        fileInput: fileInput
-
+        fileInput: fileInput,
+        addressMap: addressMap,
+        ammenities0: ammenities0,
+        ammenities1: ammenities1,
+        ammenities2: ammenities2,
+        ammenities3: ammenities3,
+        ammenities4: ammenities4,
+        ammenities5: ammenities5
       }
     });
+    console.log(newNote)
     return NextResponse.json(newNote.id);
   } catch (error) {
     if (error instanceof Error) {

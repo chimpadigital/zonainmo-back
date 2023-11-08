@@ -34,7 +34,11 @@ model Property {
   description     String?
   title           String?
   user_id         String
+  category       String?
+  price           String?
   addressMap      String?
+  lat             String?
+  lng             String?
   size            String?
   lotSize         String?
   rooms           String?
@@ -44,9 +48,15 @@ model Property {
   yearbuilt       String?
   availablefrom   String?
   comments        String?
-  youtubeVideoId  String?
+  youtubeVideo    String?
   youtubeVideoUrl String?
   fileInput       String?
+  ammenities0     String?
+  ammenities1     String?
+  ammenities2     String?
+  ammenities3     String?
+  ammenities4     String?
+  ammenities5     String?
   createdAt       DateTime @default(now())
   updateAt        DateTime @updatedAt
 }

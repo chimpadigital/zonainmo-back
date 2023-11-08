@@ -5,7 +5,7 @@ import { useState } from 'react'
 import YouTube from "react-youtube";
 
 export default function UploadMedia() {
-  const [newId, setNewId] = useState(" ")
+  const [newId, setNewId] = useState("")
   const yv = new YoutubeVideo()
   const opts = yv.render()
   return (
@@ -23,11 +23,11 @@ export default function UploadMedia() {
           id="youtubeVideo"
           name="youtubeVideo"
           className='form-control'
-          value={YouTubeGetID(newId)} />
+          defaultValue={YouTubeGetID(newId)} />
         <input
           id="videoUrl"
-          name="videoUrl"
-          className='form-control'
+          name="videoUrl"  
+          value={newId}
           onChange={(e) => setNewId(e.target.value)} />
       </div>
       <YouTube videoId={YouTubeGetID(newId)}

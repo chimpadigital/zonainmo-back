@@ -7,7 +7,6 @@ import LocationField from "./LocationField";
 import DetailsFiled from "./details-field";
 import Amenities from "./Amenities";
 
-
 export default function AddPropertyTabContent() {
 
   const handleSubmit = async (e) => {
@@ -37,17 +36,27 @@ export default function AddPropertyTabContent() {
     const youtubeVideoId = formData.get("youtubeVideo")
     const youtubeVideoUrl = formData.get("videoUrl")
     const fileInput = formData.get("fileInput")
-    console.log(title, description, user_id, category, price, addressMap, lat, lng, youtubeVideoUrl, youtubeVideoId, fileInput)
+    const ammenities0 = formData.get("ammenities0")
+    const ammenities1 = formData.get("ammenities1")
+    const ammenities2 = formData.get("ammenities2")
+    const ammenities3 = formData.get("ammenities3")
+    const ammenities4 = formData.get("ammenities4")
+    const ammenities5 = formData.get("ammenities5")
+
+    /*  console.log(title, description, user_id, addressMap, lat, lng, size, lotsize, price, category,
+       rooms, bedrooms, garages, garagesize, yearbuilt, availablefrom, comments, youtubeVideoId, youtubeVideoUrl, fileInput
+       , ammenities0, ammenities1, ammenities2, ammenities3, ammenities4, ammenities5) */
     const res = await fetch(`/crud_property`, {
       method: 'POST',
       body: JSON.stringify({
-        title, description, user_id, addressMap, lat, lng, size, lotsize,
+        title, description, user_id, addressMap, lat, lng, size, lotsize, price, category,
         rooms, bedrooms, garages, garagesize, yearbuilt, availablefrom, comments, youtubeVideoId, youtubeVideoUrl, fileInput
+        , ammenities0, ammenities1, ammenities2, ammenities3, ammenities4, ammenities5
       }),
       headers: {
         'Content-type': 'application/json'
       }
-    }) 
+    })
 
   }
 
@@ -144,8 +153,6 @@ export default function AddPropertyTabContent() {
               </div>
             </div>
           </div>
-
-
           <div
             className="tab-pane fade"
             id="nav-item3"
@@ -156,7 +163,6 @@ export default function AddPropertyTabContent() {
               <LocationField />
             </div>
           </div>
-
           <div
             className="tab-pane fade"
             id="nav-item4"

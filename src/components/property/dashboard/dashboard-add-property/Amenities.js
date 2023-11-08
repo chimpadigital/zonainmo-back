@@ -5,30 +5,11 @@ const amenitiesData = {
     { label: "Attic", defaultChecked: false },
     { label: "Basketball court", defaultChecked: true },
     { label: "Air Conditioning", defaultChecked: true },
-    { label: "Lawn", defaultChecked: true },
-    { label: "Swimming Pool", defaultChecked: false },
-    { label: "Barbeque", defaultChecked: false },
-    { label: "Microwave", defaultChecked: false },
-  ],
-  column2: [
     { label: "TV Cable", defaultChecked: false },
-    { label: "Dryer", defaultChecked: true },
-    { label: "Outdoor Shower", defaultChecked: true },
-    { label: "Washer", defaultChecked: true },
-    { label: "Gym", defaultChecked: false },
-    { label: "Ocean view", defaultChecked: false },
-    { label: "Private space", defaultChecked: false },
-  ],
-  column3: [
-    { label: "Lake view", defaultChecked: false },
-    { label: "Wine cellar", defaultChecked: true },
-    { label: "Front yard", defaultChecked: true },
-    { label: "Refrigerator", defaultChecked: true },
-    { label: "WiFi", defaultChecked: false },
-    { label: "Laundry", defaultChecked: false },
-    { label: "Sauna", defaultChecked: false },
-  ],
-};
+    { label: "Dryer", defaultChecked: true }, 
+    { label: "Dryer", defaultChecked: true }
+  ] 
+}
 
 const Amenities = () => {
   return (
@@ -40,6 +21,8 @@ const Amenities = () => {
               <label key={amenityIndex} className="custom_checkbox">
                 {amenity.label}
                 <input
+                   id= {"ammenities"+amenityIndex}
+                   name= {"ammenities"+amenityIndex} 
                   type="checkbox"
                   defaultChecked={amenity.defaultChecked}
                 />
