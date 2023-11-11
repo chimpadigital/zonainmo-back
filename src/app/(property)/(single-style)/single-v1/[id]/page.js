@@ -71,7 +71,7 @@ const SingleV1 = ({params}) => {
 
                 <h4 className="title fz17 mb30 mt50">Property Details</h4>
                 <div className="row">
-                  <PropertyDetails111111111111111111111111111111111111111111111 />
+                  <PropertyDetails/>
                 </div>
               </div>
               {/* End .ps-widget */}
